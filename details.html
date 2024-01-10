@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details Form</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="form-container">
+    <form id="detailsForm" action="/submit" method="post" enctype="multipart/form-data">
+      <h3>Enter Student Details</h3>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" autofocus required placeholder="Student name">
+      <label for="no">Roll.No:</label>
+      <input type="text" id="no" name="no" autofocus required placeholder="Pin number">
+      <label for="branch">Branch:</label>
+      <select id="branch" name="branch" required>
+        <option value="" disabled selected>Select Branch</option>
+        <option value="DCME">DCME</option>
+        <option value="DECE">DECE</option>
+        <option value="DEEE">DEEE</option>
+        <option value="DCE">DCE</option>
+        <option value="DME">DME</option>
+      </select>
+      <label for="attendance">Attendance:</label>
+      <input type="number" id="attendance" name="attendance" required placeholder="Attendance percentage">
+      <label for="img">Upload Profile Picture:</label>
+      <input type="file" id="img" name="img">
+      <label for="rank">Rank:</label>
+      <input type="number" id="rank" name="rank" required placeholder="Student rank">
+      <input type="submit" value="Submit" >
+    </form>
+  </div>
+  <div id="mainContent"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+    /* Style for the tall div */
+    .tall-div {
+      width: 110px; /* Adjust the width as needed */
+      height: 700px;
+      background-color: #FFFFFF;
+      position: absolute;
+	  bottom: 6px;
+      border-radius: 15px;
+    }
+
+    /* Style for the button inside the tall div */
+    .tall-div button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px;
+      font-family: 'Aero';
+      font-size: 16px;
+      background-color: #FFFFFF;
+      color: #212121;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px; /* Adjust the top margin as needed */
+      border-radius: 15px; /* Adjust the border-radius for rounded corners */
+      transition: background-color 0.3s ease; /* Smooth transition effect */
+    }
+
+    /* Add a shade on button hover */
+    .tall-div button:hover {
+      background-color: #777; /* Darker shade when hovering */
+    }
+
+    /* Style for the marquee text */
+    .marquee-text {
+      position: absolute;
+      top: -65%;
+      width: 100%; /* Use the entire width of the tall div */
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden; /* Hide overflowed text */
+      animation: marquee 15s linear infinite; /* Animation properties */
+    }
+
+    /* Animation keyframes for marquee effect */
+    @keyframes marquee {
+      100% { transform: translateX(100%); }
+      0% { transform: translateX(-100%); }
+    }
+
+    /* Style for the image */
+    img {
+      width: 100%; /* Make the image fill its container */
+      height: auto; /* Maintain aspect ratio */
+    }

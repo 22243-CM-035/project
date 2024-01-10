@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Interface</title>
+  <style>
+    /* Style for the tall div */
+    .tall-div {
+      width: 110px; /* Adjust the width as needed */
+      height: 700px;
+      background-color: #FFFFFF;
+      position: absolute;
+	  bottom: 6px;
+      border-radius: 15px;
+    }
+
+    /* Style for the button inside the tall div */
+    .tall-div button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px;
+      font-family: 'Aero';
+      font-size: 16px;
+      background-color: #FFFFFF;
+      color: #212121;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px; /* Adjust the top margin as needed */
+      border-radius: 15px; /* Adjust the border-radius for rounded corners */
+      transition: background-color 0.3s ease; /* Smooth transition effect */
+    }
+
+    /* Add a shade on button hover */
+    .tall-div button:hover {
+      background-color: #777; /* Darker shade when hovering */
+    }
+
+    /* Style for the marquee text */
+    .marquee-text {
+      position: absolute;
+      top: -65%;
+      width: 100%; /* Use the entire width of the tall div */
+      white-space: nowrap; /* Prevent text from wrapping */
+      overflow: hidden; /* Hide overflowed text */
+      animation: marquee 15s linear infinite; /* Animation properties */
+    }
+
+    /* Animation keyframes for marquee effect */
+    @keyframes marquee {
+      100% { transform: translateX(100%); }
+      0% { transform: translateX(-100%); }
+    }
+
+    /* Style for the image */
+    img {
+      width: 100%; /* Make the image fill its container */
+      height: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+
+  <div style="position: relative;"id="mainContent" >
+    <img src="\1.png" align="top, right" alt="SVEC Logo"/>
+    <div style="width: 1900px; height: 25px; background-color: #AEF4FF; position: absolute; top: -8; left: 0;">
+      <div class="marquee-text">
+        <h5>THIS APP IS DEVELOPED BY DCME 2022-2025 BATCH</h5>
+      </div>
+    </div>
+  </div>
+<!-- ... (previous code) -->
+
+<div class="tall-div">
+  <!-- Update the buttons to call the fetchBranchData function -->
+  <button id="dcmeBtn" onclick="fetchBranchData('DCME')" style="top: 0%;"><strong>DCME</strong></button>
+  <button id="deceBtn" onclick="fetchBranchData('DECE')" style="top: 8%;"><strong>DECE</strong></button>
+  <button id="deeeBtn" onclick="fetchBranchData('DEEE')" style="top: 16%;"><strong>DEEE</strong></button>
+  <button id="dceBtn" onclick="fetchBranchData('DCE')" style="top: 24%;"><strong>&nbspDCE&nbsp</strong></button>
+  <button id="dmeBtn" onclick="fetchBranchData('DME')" style="top: 32%;"><strong>&nbspDME&nbsp</strong></button>
+  <a href="login.html"><button style="top: 40%;"><strong>Data Entry</strong></button></a>
+</div>
+
+
+<!-- ... (remaining code) -->
+
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Update the function to fetch data based on branch using AJAX
+    function fetchBranchData(branch) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', `/branchData?branch=${branch}`, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          const data = JSON.parse(xhr.responseText);
+          console.log(data); // Modify this part based on your requirement
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
+
